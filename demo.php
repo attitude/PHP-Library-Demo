@@ -17,11 +17,10 @@ require_once dirname(dirname(__FILE__)).'/lib/attitude/DependencyInjection/Depen
 
 /* Storage Boot */
 
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/ArrayStorage.php';
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/ObjectStorage.php';
 require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/FileStorage.php';
 require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/FileStorage/DocumentStorage.php';
 require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/FileStorage/IndexStorage.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/FileStorage/ObjectStorage.php';
 
 /* ORM Boot */
 
@@ -63,7 +62,7 @@ UserDocumentStorage::$compress = 9;
 $memory_get_usage_boot = memory_get_usage(MEMORY_GET_USAGE_REAL);
 
 
-$mode = 'create';
+$mode = 'read';
 
 switch ($mode) {
     case 'create':
@@ -94,7 +93,7 @@ switch ($mode) {
         var_dump($user, $user->full_name);
     break;
     case 'read':
-        $user = new UserModel('d0b1b09a5eb64ee5a785e79c46970c35');
+        $user = new UserModel('cbc4a6d2f2cc482fb4f0999aa98666cd');
         var_dump($user, $user->full_name);
     break;
 }

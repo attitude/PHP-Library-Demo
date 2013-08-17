@@ -2,7 +2,7 @@
 
 use \attitude\DependencyInjection\DependencyContainer as DependencyContainer;
 
-class UserStorage extends \attitude\Storage\FileStorage\ObjectStorage
+class UserStorage extends \attitude\Storage\ObjectStorage
 {
     private static $instance = null;
 
