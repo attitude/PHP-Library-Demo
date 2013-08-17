@@ -4,18 +4,26 @@ define('MEMORY_GET_USAGE_REAL', false);
 
 $memory_get_usage_start = memory_get_usage(MEMORY_GET_USAGE_REAL);
 
-/* System Boot */
-
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/IndexStorage.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/DocumentStorage.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/ObjectStorage.php';
+/*
+ * System Boot
+ *
+ */
 
 /* Dependency Container */
 
 require_once dirname(dirname(__FILE__)).'/lib/attitude/DependencyInjection/DependencyContainer.php';
 
+/* Serializer */
+
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Data/Serializer.php';
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Data/JSONSerializer.php';
+
 /* Storage Boot */
+
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage.php';
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/IndexStorage.php';
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/DocumentStorage.php';
+require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Storage/ObjectStorage.php';
 
 require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/ObjectStorage.php';
 require_once dirname(dirname(__FILE__)).'/lib/attitude/Storage/FileStorage.php';
@@ -48,6 +56,11 @@ DependencyContainer::set('UserStorage::$document_storage', 'UserDocumentStorage'
 DependencyContainer::set('UserStorage::$indexes_storage[last_name]', 'UserLastNameIndexStorage');
 DependencyContainer::set('UserStorage::$indexes_storage[first_name]', 'UserFirstNameIndexStorage');
 DependencyContainer::set('UserStorage::$indexes_storage[user_name]', 'UserUserNameIndexStorage');
+
+DependencyContainer::set('UserDocumentStorage::$data_serializer',       '\attitude\Data\JSONSerializer');
+DependencyContainer::set('UserLastNameIndexStorage::$data_serializer',  '\attitude\Data\JSONSerializer');
+DependencyContainer::set('UserUserNameIndexStorage::$data_serializer',  '\attitude\Data\JSONSerializer');
+DependencyContainer::set('UserFirstNameIndexStorage::$data_serializer', '\attitude\Data\JSONSerializer');
 
 DependencyContainer::set('UserDocumentStorage::$storage_path',       FILE_STORAGE_PATH.'/users');
 DependencyContainer::set('UserLastNameIndexStorage::$storage_path',  FILE_STORAGE_PATH.'/users');
