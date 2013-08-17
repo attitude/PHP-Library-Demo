@@ -1,4 +1,4 @@
 PHP-Library-Demo
 ================
 
-Demo application build custom PHP Library
+Demo application built using custom PHP Library
