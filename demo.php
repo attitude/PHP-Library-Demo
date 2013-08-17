@@ -107,6 +107,14 @@ switch ($mode) {
     break;
     case 'read':
         $user = new UserModel('cbc4a6d2f2cc482fb4f0999aa98666cd');
+
+        var_dump($user, $user->full_name);
+    break;
+    case 'change':
+        $user = new UserModel('cbc4a6d2f2cc482fb4f0999aa98666cd');
+        $user->user_name = 'janko_kroner';
+        $user->save();
+
         var_dump($user, $user->full_name);
     break;
 }
