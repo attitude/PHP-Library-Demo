@@ -15,7 +15,7 @@ Eventually I would really like to open-source the library, but there is already 
 
 I am aware of the DRY principle and I admire many great projects out there. But reusing parts of most of the software is an extra overhead.
 
-With the library I challenged my self to keep the number public methods of the classes as low as [4 basic CRUD](http://en.wikipedia.org/wiki/CRUD) as possible. Off course it is not always possible with all the scenarios, but it is a nice reminder to have. Once the class is having *too many methods* [it should be broken into more pieces](http://fabien.potencier.org/article/50/create-your-own-framework-on-top-of-the-symfony2-components-part-1). This promotes reusability across the code framework/library.
+With the library I challenged my self to keep the number of public methods of the classes as close to [4 basic CRUD](http://en.wikipedia.org/wiki/CRUD) as possible. Off course it is not always possible with all the scenarios, but it is a nice reminder to have. Once the class is having *too many methods* [it should be broken into more pieces](http://fabien.potencier.org/article/50/create-your-own-framework-on-top-of-the-symfony2-components-part-1). This promotes reusability across the code framework/library.
 
 ### Features
 
