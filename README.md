@@ -3,17 +3,20 @@ PHP Library Demo
 
 Demo applications built around my custom PHP Library just to demonstrate the public API. Yes it might be called *Yet Another PHP Library*.
 
-Eventually I would really like to open-source the library, but there is already a ton of similar (and mature) projects comparing to this one:
+> [Browse the public documentation of the PHP Library](http://www.attitude.sk/projects/php-library)
+
+I would really like to open-source the library eventually. However there is already a ton of similar (and mature) projects comparing to this one:
 
 * [Symfony](http://symfony.com)
 * [Slim](http://slimframework.com)
 * [F3](http://fatfree.sourceforge.net)
 * [Flourish](http://flourishlib.com)
 * [Laravel](http://laravel.com)
+* many others
 
 ### Reinventing the wheel
 
-I am aware of the DRY principle and I admire many great projects out there. But reusing parts of most of the software is an extra overhead.
+I am aware of the [DRY principle](http://en.wikipedia.org/wiki/Don't_repeat_yourself) and I admire many great projects out there. But reusing the interesting parts of them is an extra overhead to keep track.
 
 With the library I challenged my self to keep the number of public methods of the classes as close to [4 basic CRUD](http://en.wikipedia.org/wiki/CRUD) as possible. Off course it is not always possible with all the scenarios, but it is a nice reminder to have. Once the class is having *too many methods* [it should be broken into more pieces](http://fabien.potencier.org/article/50/create-your-own-framework-on-top-of-the-symfony2-components-part-1). This promotes reusability across the code framework/library.
 
