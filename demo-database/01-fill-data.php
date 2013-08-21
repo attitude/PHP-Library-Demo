@@ -2,9 +2,6 @@
 
 require_once 'config.php';
 
-class UsersDatabaseConnection extends \attitude\Storage\DatabaseConnection {}
-class UsersTable extends \attitude\Storage\DatabaseStorage\TableStorage\DocumentStorage {}
-
 $user_table = new UsersTable;
 
 var_dump($user_table->store(array(

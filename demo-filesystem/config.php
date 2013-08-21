@@ -55,8 +55,6 @@ DependencyContainer::set('UserLastNameIndexStorage::$storage_path',  FILE_STORAG
 DependencyContainer::set('UserFirstNameIndexStorage::$storage_path', FILE_STORAGE_PATH.'/users');
 DependencyContainer::set('UserUserNameIndexStorage::$storage_path',  FILE_STORAGE_PATH.'/users');
 
-UserDocumentStorage::$compress = 9;
-
 //-- BOOTED
 $memory_get_usage_boot = memory_get_usage(MEMORY_GET_USAGE_REAL);
 

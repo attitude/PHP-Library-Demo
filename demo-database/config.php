@@ -29,3 +29,13 @@ DependencyContainer::set('attitude\Data\JSONSerializer::$compress', 9);
 
 //-- BOOTED
 $memory_get_usage_boot = memory_get_usage(MEMORY_GET_USAGE_REAL);
+
+class UsersDatabaseConnection extends \attitude\Storage\DatabaseConnection {}
+
+class UsersTable extends \attitude\Storage\DatabaseStorage\TableStorage\DocumentStorage
+{
+    public function __construct()
+    {
+        return parent::__construct();
+    }
+}
