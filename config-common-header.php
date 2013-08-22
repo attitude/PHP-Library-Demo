@@ -21,14 +21,4 @@ ini_set('display_errors', 1);
 
 /* Serializer */
 
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Data/Serializer.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Data/JSONSerializer.php';
-
-/* Dependency Container */
-
-require_once dirname(dirname(__FILE__)).'/lib/attitude/DependencyInjection/DependencyContainer.php';
-
-/* Serializer */
-
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Interfaces/Data/Serializer.php';
-require_once dirname(dirname(__FILE__)).'/lib/attitude/Data/JSONSerializer.php';
+require_once dirname(dirname(__FILE__)).'/src/autoload.php';

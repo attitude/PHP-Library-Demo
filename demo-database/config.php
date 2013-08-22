@@ -2,18 +2,11 @@
 
 require_once dirname(dirname(__FILE__)).'/config-common-header.php';
 
-/* Database Boot */
-
-require_once dirname(dirname(dirname(__FILE__))).'/lib/attitude/Interfaces/Storage/PDOConnection.php';
-require_once dirname(dirname(dirname(__FILE__))).'/lib/attitude/Storage/DatabaseConnection.php';
-require_once dirname(dirname(dirname(__FILE__))).'/lib/attitude/Storage/DatabaseStorage/TableStorage.php';
-require_once dirname(dirname(dirname(__FILE__))).'/lib/attitude/Storage/DatabaseStorage/TableStorage/DocumentStorage.php';
-
 /*----------------------------------------------------------------------------*/
 /*                                   SETUP                                    */
 /*----------------------------------------------------------------------------*/
 
-use \attitude\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
 
 DependencyContainer::set('UsersTable::$database_engine', 'UsersDatabaseConnection');
 
@@ -22,17 +15,26 @@ DependencyContainer::set('UsersDatabaseConnection::$username', 'root');
 DependencyContainer::set('UsersDatabaseConnection::$password', 'root');
 
 DependencyContainer::set('UsersTable::$table_name',  'users');
-DependencyContainer::set('UsersTable::$primary_key', '_id');
+DependencyContainer::set('UsersTable::$primary_key', '\attitude\Finals\Storage\Column\DocumentStorage\IDColumn');
+DependencyContainer::set('UsersTable::$created_column', '\attitude\Finals\Storage\Column\DocumentStorage\CreatedColumn');
+DependencyContainer::set('UsersTable::$updated_column', '\attitude\Finals\Storage\Column\DocumentStorage\UpdatedColumn');
+DependencyContainer::set('UsersTable::$body_column', '\attitude\Finals\Storage\Column\DocumentStorage\BodyColumn');
 
-DependencyContainer::set('UsersTable::$data_serializer', '\attitude\Data\JSONSerializer');
-DependencyContainer::set('attitude\Data\JSONSerializer::$compress', 9);
+DependencyContainer::set('UsersTable::$data_serializer', '\attitude\Finals\Data\JSONSerializer');
+DependencyContainer::set('attitude\Finals\Data\JSONSerializer::$compress', 9);
 
 //-- BOOTED
 $memory_get_usage_boot = memory_get_usage(MEMORY_GET_USAGE_REAL);
 
-class UsersDatabaseConnection extends \attitude\Storage\DatabaseConnection {}
+class UsersDatabaseConnection extends \attitude\Abstracts\Storage\DatabaseConnection
+{
+    public function __construct()
+    {
+        return parent::__construct();
+    }
+}
 
-class UsersTable extends \attitude\Storage\DatabaseStorage\TableStorage\DocumentStorage
+class UsersTable extends \attitude\Abstracts\Storage\DatabaseStorage\TableStorage\DocumentStorage
 {
     public function __construct()
     {
