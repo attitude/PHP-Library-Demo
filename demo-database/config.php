@@ -6,7 +6,7 @@ require_once dirname(dirname(__FILE__)).'/config-common-header.php';
 /*                                   SETUP                                    */
 /*----------------------------------------------------------------------------*/
 
-use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Implementations\DependencyInjection\DependencyContainer as DependencyContainer;
 
 DependencyContainer::set('UsersTable::$database_engine', 'UsersDatabaseConnection');
 
@@ -15,13 +15,13 @@ DependencyContainer::set('UsersDatabaseConnection::$username', 'root');
 DependencyContainer::set('UsersDatabaseConnection::$password', 'root');
 
 DependencyContainer::set('UsersTable::$table_name',  'users');
-DependencyContainer::set('UsersTable::$primary_key', '\attitude\Finals\Storage\Column\DocumentStorage\IDColumn');
-DependencyContainer::set('UsersTable::$created_column', '\attitude\Finals\Storage\Column\DocumentStorage\CreatedColumn');
-DependencyContainer::set('UsersTable::$updated_column', '\attitude\Finals\Storage\Column\DocumentStorage\UpdatedColumn');
-DependencyContainer::set('UsersTable::$body_column', '\attitude\Finals\Storage\Column\DocumentStorage\BodyColumn');
+DependencyContainer::set('UsersTable::$primary_key', '\attitude\Implementations\Storage\Column\DocumentStorage\IDColumn');
+DependencyContainer::set('UsersTable::$created_column', '\attitude\Implementations\Storage\Column\DocumentStorage\CreatedColumn');
+DependencyContainer::set('UsersTable::$updated_column', '\attitude\Implementations\Storage\Column\DocumentStorage\UpdatedColumn');
+DependencyContainer::set('UsersTable::$body_column', '\attitude\Implementations\Storage\Column\DocumentStorage\BodyColumn');
 
-DependencyContainer::set('UsersTable::$data_serializer', '\attitude\Finals\Data\JSONSerializer');
-DependencyContainer::set('attitude\Finals\Data\JSONSerializer::$compress', 9);
+DependencyContainer::set('UsersTable::$data_serializer', '\attitude\Implementations\Data\JSONSerializer');
+DependencyContainer::set('attitude\Implementations\Data\JSONSerializer::$compress', 9);
 
 //-- BOOTED
 $memory_get_usage_boot = memory_get_usage(MEMORY_GET_USAGE_REAL);

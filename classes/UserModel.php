@@ -1,6 +1,6 @@
 <?php
 
-use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Implementations\DependencyInjection\DependencyContainer as DependencyContainer;
 
 class UserModel extends \attitude\Abstracts\ORM\Model
 {

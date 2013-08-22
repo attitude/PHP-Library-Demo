@@ -21,4 +21,4 @@ ini_set('display_errors', 1);
 
 /* Serializer */
 
-require_once dirname(dirname(__FILE__)).'/src/autoload.php';
+require_once dirname(dirname(__FILE__)).'/src/attitude/autoload.php';
