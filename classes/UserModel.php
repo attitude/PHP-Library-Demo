@@ -1,8 +1,8 @@
 <?php
 
-use \attitude\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
 
-class UserModel extends \attitude\ORM\Model
+class UserModel extends \attitude\Abstracts\ORM\Model
 {
     protected function get__full_name()
     {

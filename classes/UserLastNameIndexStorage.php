@@ -1,8 +1,8 @@
 <?php
 
-use \attitude\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
 
-class UserLastNameIndexStorage extends \attitude\Storage\FileStorage\IndexStorage
+class UserLastNameIndexStorage extends \attitude\Abstracts\Storage\FileStorage\IndexStorage
 {
     private static $instance = null;
     protected static $index_name = 'last_name';

@@ -1,8 +1,8 @@
 <?php
 
-use \attitude\DependencyInjection\DependencyContainer as DependencyContainer;
+use \attitude\Finals\DependencyInjection\DependencyContainer as DependencyContainer;
 
-class UserDocumentStorage extends \attitude\Storage\FileStorage\DocumentStorage
+class UserDocumentStorage extends \attitude\Abstracts\Storage\FileStorage\DocumentStorage
 {
     private static $instance = null;
 
